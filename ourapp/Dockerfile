@@ -5,5 +5,5 @@ RUN mvn -f /home/app/pom.xml clean package
 
 FROM gcr.io/distroless/java  
 COPY --from=build /usr/src/app/target/ourapp-1.0.0-SNAPSHOT.jar /usr/app/ourapp-1.0.0-SNAPSHOT.jar  
-EXPOSE 8080  
+EXPOSE 8888
 ENTRYPOINT ["java","-jar","/usr/app/ourapp-1.0.0-SNAPSHOT.jar"]  
